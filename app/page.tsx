@@ -49,7 +49,7 @@ export default async function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center p-24">
       <p className="text-2xl">AI Resume Generator</p>
-      <p className="text-lg mb-5">Feed in a job title and posting and we'll generate a resume tailored to it</p>
+      <p className="text-lg mb-5">Feed in a job title and posting and we will generate a resume tailored to it</p>
       {isLoggedIn ? <LoggedInComponent session={session} resumes={resumes}/> : <NotLoggedInComponent/>}
     </main>
   )

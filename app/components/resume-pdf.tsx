@@ -36,22 +36,22 @@ export default function ResumePdf({ resume }: { resume: ResumeModel }) {
                 <Typography variant="small">{resume.json.summary}</Typography>
                 <Divider label="Skills" />
                 <ul className="flex flex-wrap pl-4" style={{listStyle:"initial"}}>
-                    {resume.json.skills.map((skill) => {
+                    {resume.json.skills.map((skill, id) => {
                         return (
-                            <li className="basis-1/2"><Typography variant="paragraph">{skill}</Typography></li>
+                            <li key={id} className="basis-1/2"><Typography variant="paragraph">{skill}</Typography></li>
                         )
                     })}
                 </ul>
                 <Divider label="Employment"/>
-                {resume.json.employment.map((employment) => {
+                {resume.json.employment.map((employment, id) => {
                     return (
-                        <div className="flex flex-col gap-2">
+                        <div key={id} className="flex flex-col gap-2">
                             <div className="flex items-center gap-2">
                                 <Typography variant="h5">{employment.title} - {employment.company}</Typography>
                                 <Typography variant="small">{employment.startDate} - {employment.endDate}</Typography>
                             </div>
                             <ul className="pl-4" style={{listStyle:"initial"}}>
-                                {employment.duties.map((duty) => <li><Typography variant="paragraph">{duty}</Typography></li>)}
+                                {employment.duties.map((duty, id) => <li key={id}><Typography variant="paragraph">{duty}</Typography></li>)}
                             </ul>
                         </div>
                     )
